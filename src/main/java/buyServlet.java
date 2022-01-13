@@ -53,7 +53,7 @@ protected void doGet(HttpServletRequest request,HttpServletResponse response)
 
                   }
 
-
+      //empty cart list
             writer.println("Total $: "+session.getAttribute("salesTotal"));
           writer.println("</h1>");
             session.removeAttribute("cart");
