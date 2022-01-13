@@ -40,6 +40,7 @@ protected void doGet(HttpServletRequest request,HttpServletResponse response)
             writer.println ("<TITLE> Servlet Response </TITLE>") ;
             writer.println ("</HEAD>") ;
             writer.println ("<BODY>") ;
+            writer.println("<h1>");
                   for (int i = 0; i < buyList.size(); i++) {
                         if (buyList.get(i).equals("car")) {
                               writer.println(buyList.get(i) + "   $" + 200 * countList.get(i));
@@ -50,7 +51,9 @@ protected void doGet(HttpServletRequest request,HttpServletResponse response)
 
                   }
 
+
             writer.println("Total $: "+session.getAttribute("salesTotal"));
+          writer.println("</h1>");
             session.removeAttribute("cart");
             session.removeAttribute("countList");
             session.setAttribute("total",0);

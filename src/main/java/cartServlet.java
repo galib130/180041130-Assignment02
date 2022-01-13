@@ -40,6 +40,7 @@ public class cartServlet extends HttpServlet {
             } else {
                 System.out.println(cartList.size());
                 System.out.println(countList.size());
+                writer.println("<h1>");
                 for (int i = 0; i < cartList.size(); i++) {
 
                     writer.println("<form action='addServlet'  method='post'> ");
@@ -81,6 +82,7 @@ public class cartServlet extends HttpServlet {
 
                 writer.println("<button type='submit' name='checkout'>checkout</button>");
                 writer.println("</form>");
+                writer.println("</h1>");
             }
 
 
