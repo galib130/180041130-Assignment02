@@ -17,9 +17,7 @@ public class cartServlet extends HttpServlet {
         ArrayList<Integer> countList= new ArrayList<Integer>();
         response.setContentType ("text/html");
         HttpSession session=request.getSession(false);
-        //request.getRequestDispatcher("navbar.html").include(request,response);
-        //request.getRequestDispatcher("navbar.html").include(request,response);
-
+        /*getting the cart and count of each item attribute*/
         if(session!=null) {
         cartList= (ArrayList<String>) session.getAttribute("cart");
         if((ArrayList<String>) session.getAttribute("countList")!=null)
@@ -34,7 +32,7 @@ public class cartServlet extends HttpServlet {
         writer.println ("</HEAD>") ;
         writer.println ("<BODY>") ;
 
-
+            /*display cart*/
             if (cartList == null||session.getAttribute("cart")==null||cartList.size()==0||request.getParameter("checkout")!=null) {
                 writer.println("Cart is empty");
             } else {
@@ -87,6 +85,7 @@ public class cartServlet extends HttpServlet {
 
 
         }
+        //if session is not valid
         else
             request.getRequestDispatcher("login.html").include(request,response);
     }

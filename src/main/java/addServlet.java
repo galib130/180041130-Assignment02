@@ -24,6 +24,7 @@ public class addServlet extends  HttpServlet{
         HttpSession session=request.getSession(false);
         //request.getRequestDispatcher("navbar.html").include(request,response);
     if(session!=null) {
+        //if car is added to cart
         if (carButton != null) {
             if (session.getAttribute("cart") != null) {
                 cartList = (ArrayList<String>) session.getAttribute("cart");
@@ -122,7 +123,7 @@ public class addServlet extends  HttpServlet{
             }
 
         }
-
+        //if add or remove button is pressed
         if (cartList != null) {
             //cartList= (ArrayList<String>) session.getAttribute("cart");
             int count = 0;
@@ -198,7 +199,7 @@ public class addServlet extends  HttpServlet{
                     break;
                 }
             }
-
+          //if checkout button is pressed on cart page
             if (checkoutButton != null) {
 
                 if (session.getAttribute("cart") != null) {
@@ -222,8 +223,10 @@ public class addServlet extends  HttpServlet{
             }
         }
 
+        //if only home button is pressed
         request.getRequestDispatcher("home.html").include(request, response);
     }
+    //if session not valid
     else
         request.getRequestDispatcher("login.html").include(request,response);
 

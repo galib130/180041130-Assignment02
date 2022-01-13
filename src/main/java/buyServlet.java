@@ -40,6 +40,8 @@ protected void doGet(HttpServletRequest request,HttpServletResponse response)
             writer.println ("<TITLE> Servlet Response </TITLE>") ;
             writer.println ("</HEAD>") ;
             writer.println ("<BODY>") ;
+
+            //Show checked out item
             writer.println("<h1>");
                   for (int i = 0; i < buyList.size(); i++) {
                         if (buyList.get(i).equals("car")) {

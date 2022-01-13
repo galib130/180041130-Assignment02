@@ -16,13 +16,15 @@ public class LoginServlet extends HttpServlet{
         request.getRequestDispatcher("navbar.html").include(request,response);
         String username=request.getParameter("username");
         String password= request.getParameter("password");
-
+        //check password and username
         if(password.equals("admin")&&username.equals("galib130")){
             out.println("Welcome " +username);
             HttpSession session=request.getSession();
             session.setAttribute("username",username);
 
+
         }
+        //if password or username do not match
         else{
             out.println("Wrong username or password");
                 request.getRequestDispatcher("login.html").include(request,response);
